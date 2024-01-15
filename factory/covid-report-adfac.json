@@ -1,0 +1,9 @@
+{
+	"name": "covid-report-adfac",
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "d0e4d685-ea14-4ad3-ae9f-9a8d75d30004",
+		"tenantId": "7159a550-6858-4294-beb6-3d94c2a1346a"
+	}
+}
