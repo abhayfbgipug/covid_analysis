@@ -19,6 +19,10 @@
 			"type": "string",
 			"defaultValue": "https://covidrepodl1.dfs.core.windows.net/"
 		},
+		"trigger1_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/e37ffaf1-a3b1-4352-b420-c45c697f29a6/resourceGroups/covid-reporting-rg/providers/Microsoft.Storage/storageAccounts/covidrepostorageacc"
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -54,6 +58,9 @@
 					},
 					"ls_adls_covidreportingdl_properties_typeProperties_url": {
 						"value": "[parameters('ls_adls_covidreportingdl_properties_typeProperties_url')]"
+					},
+					"trigger1_properties_typeProperties_scope": {
+						"value": "[parameters('trigger1_properties_typeProperties_scope')]"
 					}
 				}
 			},
