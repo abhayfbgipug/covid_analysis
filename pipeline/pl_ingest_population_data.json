@@ -48,6 +48,7 @@
 					],
 					"storeSettings": {
 						"type": "AzureBlobStorageReadSettings",
+						"recursive": true,
 						"enablePartitionDiscovery": false
 					},
 					"formatSettings": {
@@ -86,7 +87,7 @@
 							},
 							"userProperties": [],
 							"typeProperties": {
-								"url": "https://invalid",
+								"url": "abhaygupt.1711@gmail.com",
 								"method": "POST",
 								"body": "dummy"
 							}
