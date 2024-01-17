@@ -19,7 +19,7 @@
 			"type": "string",
 			"defaultValue": "https://covidrepodl1.dfs.core.windows.net/"
 		},
-		"tr_ingest_population_data_properties_typeProperties_scope": {
+		"tr_ingest_population_properties_typeProperties_scope": {
 			"type": "string",
 			"defaultValue": "/subscriptions/e37ffaf1-a3b1-4352-b420-c45c697f29a6/resourceGroups/covid-reporting-rg/providers/Microsoft.Storage/storageAccounts/covidrepostorageacc"
 		}
@@ -354,7 +354,7 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/tr_ingest_population_data')]",
+			"name": "[concat(parameters('factoryName'), '/tr_ingest_population')]",
 			"type": "Microsoft.DataFactory/factories/triggers",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -371,9 +371,9 @@
 				],
 				"type": "BlobEventsTrigger",
 				"typeProperties": {
-					"blobPathBeginsWith": "/population/blobs/population_by_age(2).tsv.gz",
+					"blobPathBeginsWith": "/population/blobs/population_by_age.tsv.gz",
 					"ignoreEmptyBlobs": true,
-					"scope": "[parameters('tr_ingest_population_data_properties_typeProperties_scope')]",
+					"scope": "[parameters('tr_ingest_population_properties_typeProperties_scope')]",
 					"events": [
 						"Microsoft.Storage.BlobCreated"
 					]
