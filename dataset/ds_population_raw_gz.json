@@ -11,7 +11,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "population_by_age (2).tsv.gz",
+				"fileName": "population_by_age.tsv.gz",
 				"container": "population"
 			},
 			"columnDelimiter": "\t",
@@ -22,5 +22,6 @@
 			"quoteChar": "\""
 		},
 		"schema": []
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }
