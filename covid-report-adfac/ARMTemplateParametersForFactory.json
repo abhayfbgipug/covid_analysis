@@ -14,6 +14,9 @@
 		"ls_adls_covidreportingdl_properties_typeProperties_url": {
 			"value": "https://covidrepodl1.dfs.core.windows.net/"
 		},
+		"ls_http_opendata_ecdc_properties_typeProperties_url": {
+			"value": "@{linkedService().SourceBaseURL}"
+		},
 		"tr_ingest_population_properties_typeProperties_scope": {
 			"value": "/subscriptions/e37ffaf1-a3b1-4352-b420-c45c697f29a6/resourceGroups/covid-reporting-rg/providers/Microsoft.Storage/storageAccounts/covidrepostorageacc"
 		}
