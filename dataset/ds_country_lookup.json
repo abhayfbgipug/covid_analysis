@@ -11,6 +11,7 @@
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"fileName": "country_lookup (1).csv",
+				"folderPath": "dim country",
 				"fileSystem": "lookup"
 			},
 			"columnDelimiter": ",",
@@ -40,5 +41,6 @@
 				"type": "String"
 			}
 		]
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }

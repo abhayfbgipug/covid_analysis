@@ -87,8 +87,8 @@
 							},
 							"userProperties": [],
 							"typeProperties": {
-								"url": "abhaygupt.1711@gmail.com",
 								"method": "POST",
+								"url": "abhaygupt.1711@gmail.com",
 								"body": "dummy"
 							}
 						}
