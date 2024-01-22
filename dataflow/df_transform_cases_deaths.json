@@ -79,7 +79,7 @@
 				"          daily_count,",
 				"          source,",
 				"          each(match(name=='date'),",
-				"               'reported_' + 'date' = $$)",
+				"               'reported_'+'date' = $$)",
 				"     ),",
 				"     skipDuplicateMapInputs: false,",
 				"     skipDuplicateMapOutputs: false) ~> SelectOnlyRequiredFields",

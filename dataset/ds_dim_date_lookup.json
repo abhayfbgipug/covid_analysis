@@ -1,5 +1,5 @@
 {
-	"name": "ds_raw_cases_deaths",
+	"name": "ds_dim_date_lookup",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "ls_adls_covidreportingdl",
@@ -10,9 +10,9 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "cases_deaths.csv",
-				"folderPath": "ecdc/cases_deaths",
-				"fileSystem": "raw"
+				"fileName": "dim_date (1).csv",
+				"folderPath": "dim date",
+				"fileSystem": "lookup"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
@@ -21,27 +21,7 @@
 		},
 		"schema": [
 			{
-				"name": "country",
-				"type": "String"
-			},
-			{
-				"name": "country_code",
-				"type": "String"
-			},
-			{
-				"name": "continent",
-				"type": "String"
-			},
-			{
-				"name": "population",
-				"type": "String"
-			},
-			{
-				"name": "indicator",
-				"type": "String"
-			},
-			{
-				"name": "daily_count",
+				"name": "date_key",
 				"type": "String"
 			},
 			{
@@ -49,11 +29,43 @@
 				"type": "String"
 			},
 			{
-				"name": "rate_14_day",
+				"name": "year",
 				"type": "String"
 			},
 			{
-				"name": "source",
+				"name": "month",
+				"type": "String"
+			},
+			{
+				"name": "day",
+				"type": "String"
+			},
+			{
+				"name": "day_name",
+				"type": "String"
+			},
+			{
+				"name": "day_of_year",
+				"type": "String"
+			},
+			{
+				"name": "week_of_month",
+				"type": "String"
+			},
+			{
+				"name": "week_of_year",
+				"type": "String"
+			},
+			{
+				"name": "month_name",
+				"type": "String"
+			},
+			{
+				"name": "year_month",
+				"type": "String"
+			},
+			{
+				"name": "year_week",
 				"type": "String"
 			}
 		]
