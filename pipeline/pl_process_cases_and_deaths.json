@@ -27,8 +27,11 @@
 				}
 			}
 		],
+		"folder": {
+			"name": "processed"
+		},
 		"annotations": [],
-		"lastPublishTime": "2024-01-20T16:32:33Z"
+		"lastPublishTime": "2024-01-22T12:40:25Z"
 	},
 	"type": "Microsoft.DataFactory/factories/pipelines"
 }
