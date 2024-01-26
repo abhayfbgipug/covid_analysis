@@ -15,15 +15,27 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'ls_adls_covidreportingdl'"
 		},
+		"ls_db_covid_cluster_accessToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accessToken' of 'ls_db_covid_cluster'"
+		},
+		"ls_sql_covid_db_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'ls_sql_covid_db'"
+		},
 		"ls_adls_covidreportingdl_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://covidrepodl1.dfs.core.windows.net/"
+		},
+		"ls_db_covid_cluster_properties_typeProperties_existingClusterId": {
+			"type": "string",
+			"defaultValue": "0122-124839-dwuwqw1o"
 		},
 		"ls_http_opendata_ecdc_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "@{linkedService().SourceBaseURL}"
 		},
-		"tr_ingest_population_properties_typeProperties_scope": {
+		"tr_population_data_arrived_properties_typeProperties_scope": {
 			"type": "string",
 			"defaultValue": "/subscriptions/e37ffaf1-a3b1-4352-b420-c45c697f29a6/resourceGroups/covid-reporting-rg/providers/Microsoft.Storage/storageAccounts/covidrepostorageacc"
 		},
@@ -60,18 +72,47 @@
 					"ls_adls_covidreportingdl_accountKey": {
 						"value": "[parameters('ls_adls_covidreportingdl_accountKey')]"
 					},
+					"ls_db_covid_cluster_accessToken": {
+						"value": "[parameters('ls_db_covid_cluster_accessToken')]"
+					},
+					"ls_sql_covid_db_connectionString": {
+						"value": "[parameters('ls_sql_covid_db_connectionString')]"
+					},
 					"ls_adls_covidreportingdl_properties_typeProperties_url": {
 						"value": "[parameters('ls_adls_covidreportingdl_properties_typeProperties_url')]"
 					},
+					"ls_db_covid_cluster_properties_typeProperties_existingClusterId": {
+						"value": "[parameters('ls_db_covid_cluster_properties_typeProperties_existingClusterId')]"
+					},
 					"ls_http_opendata_ecdc_properties_typeProperties_url": {
 						"value": "[parameters('ls_http_opendata_ecdc_properties_typeProperties_url')]"
-					},
-					"tr_ingest_population_properties_typeProperties_scope": {
-						"value": "[parameters('tr_ingest_population_properties_typeProperties_scope')]"
 					}
 				}
 			},
 			"dependsOn": []
+		},
+		{
+			"name": "covid-report-adfac_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"tr_population_data_arrived_properties_typeProperties_scope": {
+						"value": "[parameters('tr_population_data_arrived_properties_typeProperties_scope')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'covid-report-adfac_ArmTemplate_0')]"
+			]
 		}
 	]
 }
